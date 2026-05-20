@@ -668,7 +668,7 @@ footer a:hover {
   .about-photo {
     width: 100%;
     max-width: 260px;
-    height: 200px;
+    height: auto;
     align-self: center;
   }
 
@@ -713,8 +713,9 @@ footer a:hover {
     font-size: 0.75rem;
   }
 
-  /* Photo grid — 1 column on small phones */
+  /* Photo grid — keep 3 columns on phones, smaller gap */
   .photo-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.25rem;
   }
 }
