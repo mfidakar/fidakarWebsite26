@@ -587,3 +587,134 @@ footer a {
 footer a:hover {
   color: #ffffff;
 }
+
+/* L. HAMBURGER BUTTON (hidden on desktop)
+============================================================================= */
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: #ffffff;
+  font-size: 1.4rem;
+  cursor: pointer;
+  padding: 0.3rem 0.5rem;
+  line-height: 1;
+}
+
+/* M. RESPONSIVE — TABLET & MOBILE
+============================================================================= */
+@media (max-width: 768px) {
+
+  /* Navigation */
+  nav {
+    flex-wrap: wrap;
+    height: auto;
+    padding: 0.9rem 5%;
+  }
+
+  .nav-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    gap: 0;
+    margin-top: 0.6rem;
+    padding-bottom: 0.4rem;
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .nav-links li {
+    border-top: 1px solid rgba(255,255,255,0.08);
+  }
+
+  .nav-links a {
+    display: block;
+    padding: 0.65rem 0;
+    font-size: 0.85rem;
+  }
+
+  /* Hero */
+  .hero-text h1 {
+    font-size: 2rem;
+  }
+
+  .hero-text .hero-sub {
+    font-size: 0.85rem;
+    letter-spacing: 0.03em;
+  }
+
+  /* Profile */
+  .profile-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.2rem;
+  }
+
+  .profile-section .container {
+    padding-left: 5%;
+  }
+
+  /* About */
+  .about-inner {
+    flex-direction: column;
+  }
+
+  .about-photo {
+    width: 100%;
+    max-width: 260px;
+    height: 200px;
+    align-self: center;
+  }
+
+  /* Photo grid — 2 columns on tablet */
+  .photo-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Blog card */
+  .blog-card-inner {
+    flex-direction: column;
+  }
+
+  .blog-thumb {
+    width: 100% !important;
+    aspect-ratio: 16 / 9 !important;
+  }
+
+  /* Teaching — remove indent on mobile */
+  .teaching-item {
+    margin-left: 0;
+  }
+
+  .teaching-role-label {
+    margin-left: 0;
+  }
+
+  /* Section spacing */
+  .section {
+    padding: 3rem 0;
+  }
+}
+
+@media (max-width: 480px) {
+
+  /* Hero */
+  .hero-text h1 {
+    font-size: 1.6rem;
+  }
+
+  .hero-text .hero-sub {
+    font-size: 0.75rem;
+  }
+
+  /* Photo grid — 1 column on small phones */
+  .photo-grid {
+    grid-template-columns: 1fr;
+  }
+}
