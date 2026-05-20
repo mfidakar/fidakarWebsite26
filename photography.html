@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Photography — Mohammad Fidakar</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="index.html" class="nav-logo">Mohammad Fidakar</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="research.html">Research</a></li>
+      <li><a href="teaching.html">Teaching</a></li>
+      <li><a href="photography.html" class="active">Photography</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="cv.html">CV</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" style="background-image: url('images/wall.jpg'); height: 45vh;">
+    <div class="hero-overlay"></div>
+    <div class="hero-text">
+      <h1>Photography</h1>
+      <p class="hero-sub">A visual journal</p>
+    </div>
+  </section>
+
+  <!-- PHOTOS BY YEAR -->
+  <section class="section">
+    <div class="container">
+
+      <!-- 2026 -->
+      <div class="photo-year" id="year-2026">
+        <h2 class="photo-year-title">2026</h2>
+        <div class="photo-grid">
+          <!-- drop photos into images/photography/2026/ and run build_photos.py -->
+        </div>
+      </div>
+
+      <!-- 2025 -->
+      <div class="photo-year" id="year-2025">
+        <h2 class="photo-year-title">2025</h2>
+        <div class="photo-grid">
+          <!-- drop photos into images/photography/2025/ and run build_photos.py -->
+        </div>
+      </div>
+
+      <!-- 2024 -->
+      <div class="photo-year" id="year-2024">
+        <h2 class="photo-year-title">2024</h2>
+        <div class="photo-grid">
+          <!-- drop photos into images/photography/2024/ and run build_photos.py -->
+        </div>
+      </div>
+
+      <!-- 2023 -->
+      <div class="photo-year" id="year-2023">
+        <h2 class="photo-year-title">2023</h2>
+        <div class="photo-grid">
+          <img src="images/photography/2023/IMG_3934.jpg" alt="">
+          <img src="images/photography/2023/IMG_3937.jpg" alt="">
+          <img src="images/photography/2023/IMG_4585.jpg" alt="">
+          <img src="images/photography/2023/IMG_5058.jpg" alt="">
+          <img src="images/photography/2023/IMG_5108.jpg" alt="">
+          <img src="images/photography/2023/IMG_5232.jpg" alt="">
+          <img src="images/photography/2023/IMG_5244.jpg" alt="">
+          <img src="images/photography/2023/IMG_5246.jpg" alt="">
+          <img src="images/photography/2023/IMG_5247.jpg" alt="">
+          <img src="images/photography/2023/IMG_5280.jpg" alt="">
+          <img src="images/photography/2023/IMG_5290.jpg" alt="">
+          <img src="images/photography/2023/IMG_5650.jpg" alt="">
+          <img src="images/photography/2023/IMG_5693.jpg" alt="">
+          <img src="images/photography/2023/IMG_5695.jpg" alt="">
+          <img src="images/photography/2023/IMG_5697.jpg" alt="">
+        </div>
+      </div>
+
+      <!-- 2020 -->
+      <div class="photo-year" id="year-2020">
+        <h2 class="photo-year-title">2020</h2>
+        <div class="photo-grid">
+          <img src="images/photography/2020/121161479_3321155681334083_4807900273857761107_n.jpg" alt="">
+          <img src="images/photography/2020/121266367_3321154998000818_4851239672837172549_n.jpg" alt="">
+          <img src="images/photography/2020/121300001_3321151031334548_1912318112496857277_n.jpg" alt="">
+          <img src="images/photography/2020/121372234_3321193064663678_2579728177963999595_n.jpg" alt="">
+          <img src="images/photography/2020/121414950_3321152811334370_3309502963184659290_n.jpg" alt="">
+          <img src="images/photography/2020/121453827_3321149664668018_2441612202620397346_n.jpg" alt="">
+          <img src="images/photography/2020/121558953_3321152094667775_3244270601310367640_n.jpg" alt="">
+          <img src="images/photography/2020/121805917_3321159294667055_4583039838944394053_n.jpg" alt="">
+          <img src="images/photography/2020/93907466_2828073023975687_4803793347162406912_n.jpg" alt="">
+          <img src="images/photography/2020/94970366_2828074577308865_4883437760410550272_n.jpg" alt="">
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox">
+    <span class="lightbox-close" id="lightbox-close">&times;</span>
+    <img src="" alt="" id="lightbox-img">
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2026 Mohammad Fidakar &nbsp;·&nbsp; Emory University</p>
+  </footer>
+
+  <script>
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const lightboxClose = document.getElementById('lightbox-close');
+
+    document.querySelectorAll('.photo-grid img').forEach(img => {
+      img.addEventListener('click', () => {
+        lightboxImg.src = img.src;
+        lightboxImg.alt = img.alt;
+        lightbox.classList.add('active');
+      });
+    });
+
+    lightboxClose.addEventListener('click', () => lightbox.classList.remove('active'));
+    lightbox.addEventListener('click', e => {
+      if (e.target === lightbox) lightbox.classList.remove('active');
+    });
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') lightbox.classList.remove('active');
+    });
+  </script>
+
+</body>
+</html>

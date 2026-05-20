@@ -1,0 +1,78 @@
+HANDOFF — 2026-05-20
+Author: Mohammad Fidakar
+
+## What Was Done
+
+1. Built the complete personal academic website from scratch across two sessions (May 18–20)
+2. Created all six pages: Home (index.html), Research, Teaching, Photography, Blog, CV
+3. Designed full CSS stylesheet — Arctic palette (#1a2a4a navy, #5b8dd9 blue, #eef1f6 panel)
+4. Home page: cover hero with name, circular headshot + social icons panel, rectangular headshot + bio text
+5. Research page: Publications, Policy Papers, Working Papers sections with abstracts
+6. Teaching page: Emory (Instructor + TA roles) and Ghazni University sections
+7. Blog page: Farsi Writings + English Writings sections (Emory news article)
+8. Photography page: year-organized grid (3 columns, 7:5 aspect ratio) with lightbox
+9. CV page: embedded cv.pdf from files/
+10. Reorganized all photos into year subfolders: images/photography/2020/ and images/photography/2023/
+11. Created build_photos.py — drop photos into a year folder, run the script, HTML updates automatically
+12. Created .workspace/TODO.md with all pending features and tasks
+13. Created this handoff document
+
+## Files Created This Session
+
+- index.html
+- research.html
+- teaching.html
+- photography.html
+- blog.html
+- cv.html
+- css/style.css
+- build_photos.py
+- .workspace/TODO.md
+- .workspace/handoffs/HANDOFF_2026-05-20.txt
+- images/photography/2020/  (subfolder — 10 photos moved here)
+- images/photography/2023/  (subfolder — 15 photos moved here)
+- images/photography/2024/  (empty, ready for new photos)
+- images/photography/2025/  (empty, ready for new photos)
+- images/photography/2026/  (empty, ready for new photos)
+
+## Files Modified This Session
+
+- photography.html — updated all src paths to use year subfolders (images/photography/2023/..., images/photography/2020/...)
+
+## How to Add New Photos (Workflow)
+
+1. Drop photo files into the correct year folder:
+     images/photography/2024/your-photo.jpg
+2. From the website folder, run:
+     python3 build_photos.py
+3. The script scans each year folder and rewrites the photo grids automatically.
+
+## Next Steps
+
+1. Photo likes + view counter — Firebase Realtime Database
+   - Step 1: Create Firebase project at firebase.google.com (name it "fidakar-website")
+   - Step 2: Come back and say "let's set up Firebase" — will wire up the JS
+
+2. Photo purchase ($2/photo, proceeds to Afghan children's education)
+   - Decide: Stripe payment processor OR link out to a charity donation page
+   - Add mission note to photography page
+
+3. Blog: "Stories of Displacement" section
+   - Decide format: submitted stories, curated links, or Mohammad's own writing
+
+4. Blog: placeholder for future categories (add here for more...)
+
+5. Deploy to mfidakar.com
+   - Push files to host (GitHub Pages or Netlify recommended — free, easy)
+   - Confirm DNS points to host
+
+6. Add abstracts for 2 working papers on research page
+
+7. Add link for Farsi article "Conflict and Development" on blog page when available
+
+## Notes
+
+- Local preview: from the fidakarWebsite folder, run: python3 -m http.server 8000
+  then open http://localhost:8000 in browser
+- Cover photo: images/cover.jpg (replace to change the hero background on all pages)
+- Profile photos: images/headshot.jpg (rectangular, bio section) and images/headshot2.jpg (circular, profile panel)
