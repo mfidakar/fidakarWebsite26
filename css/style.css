@@ -430,7 +430,7 @@ nav {
 
 .photo-grid img {
   width: 100%;
-  aspect-ratio: 7 / 5;
+  aspect-ratio: 4 / 5;
   object-fit: cover;
   border-radius: 4px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
